@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}Users{% endblock %}
+
+{% block body %}
+    
+    {% for user in users %}
+        {{ user.name }}<br>
+        {{ user.surname }}<br>
+    {% endfor %}
+    
+{% endblock %}

@@ -1,0 +1,24 @@
+user:
+    name:
+        not_blank: "Name should not be blank"
+        min_length: "Name is too short. It should have {{ limit }} characters or more"
+        max_length: "Name is too long. It should have {{ limit }} characters or less"
+    surname:
+        not_blank: "Name should not be blank"
+        min_length: "Name is too short. It should have {{ limit }} characters or more"
+        max_length: "Name is too long. It should have {{ limit }} characters or less"
+    password:
+        not_blank: "Password should not be blank"
+        min_length: "Password is too short. It should have {{ limit }} characters or more"
+        max_length: "Password is too long. It should have {{ limit }} characters or less"
+    phone:
+        not_blank: "Phone should not be blank"
+        min_length: "Phone is too short. It should have {{ limit }} characters or more"
+        max_length: "Phone is too long. It should have {{ limit }} characters or less"
+        regex: "Phone should starts with '+' character and then 7 digits or more"
+    email:
+        not_blank: "Email should not be blank"
+        wrong: "Email '{{ value }}' is wrong"
+        unique: "Such email is used already"
+    error:
+        not_found: "User not found"

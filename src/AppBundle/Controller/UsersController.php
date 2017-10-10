@@ -94,12 +94,13 @@ class UsersController extends FOSRestController
                 if(!$form->get('isActive')->getData()){
                     $user->setIsActive(true);
                 }
-                
-                $role = $em->getRepository('AppBundle:Role')->findOneByRole('ROLE_USER');
-                if(!$role){
-                    throw $this->createNotFoundException( $this->get('translator')->trans('role.error.not_found', array(), 'validators') );
+                if($new){
+                    $role = $em->getRepository('AppBundle:Role')->findOneByRole('ROLE_USER');
+                    if(!$role){
+                        throw $this->createNotFoundException( $this->get('translator')->trans('role.error.not_found', array(), 'validators') );
+                    }
+                    $user->addRole($role);
                 }
-                $user->addRole($role);
             }
             
             $em->persist($user);
